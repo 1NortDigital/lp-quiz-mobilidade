@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#07090B"/>
+<meta name="robots" content="index, follow"/>
+<title>Diagnóstico 1Nort · Mobilidade Elétrica</title>
+<meta name="description" content="Responda 6 perguntas rápidas e receba uma análise gratuita do comercial da sua loja de mobilidade elétrica."/>
+<meta property="og:title" content="Diagnóstico 1Nort · Mobilidade Elétrica"/>
+<meta property="og:description" content="Análise gratuita do comercial da sua loja de mobilidade elétrica."/>
+<meta property="og:locale" content="pt_BR"/><meta property="og:site_name" content="1Nort Digital"/><meta property="og:type" content="website"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+
+<!-- ===================== META PIXEL (base) ===================== -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+</script>
+
+<style>
+:root{
+  --surface-0:#07090b;--surface-1:#0e1116;--surface-2:#171b21;--surface-3:#1f242c;
+  --txt-1:#fff;--txt-2:#dce2e8;--txt-3:#b6c0cb;--txt-4:#8a97a5;
+  --amber:#fdb913;--amber-deep:#e6a400;--amber-soft:rgba(253,185,19,.14);--amber-line:rgba(253,185,19,.42);
+  --ok:#4ade80;--danger:#ff8a8a;--whatsapp:#25d366;
+  --line-1:rgba(255,255,255,.1);--line-2:rgba(255,255,255,.18);--radius:14px;--shell:37rem;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--surface-0);color:var(--txt-1);min-height:100dvh;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+button{font-family:inherit}
+a{color:inherit}
+b,strong{font-weight:700;color:var(--txt-1)}
+
+/* ---------- fundo ---------- */
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.bg-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity .6s var(--ease)}
+.bg-shade{position:absolute;inset:0;background:var(--surface-0);opacity:.92;transition:opacity .6s var(--ease)}
+.bg.dim .bg-shade{opacity:.7}
+.blob{position:absolute;border-radius:50%;background:var(--amber);filter:blur(100px)}
+.blob.a{top:-7rem;right:-5rem;width:280px;height:280px;opacity:.07;animation:fa 22s ease-in-out infinite alternate}
+.blob.b{bottom:-8rem;left:-6rem;width:240px;height:240px;opacity:.05;animation:fb 26s ease-in-out infinite alternate}
+@keyframes fa{to{transform:translate(-34px,26px) scale(1.16);opacity:.09}}
+@keyframes fb{to{transform:translate(30px,-22px) scale(1.12);opacity:.08}}
+@media(min-width:640px){.blob.a{width:420px;height:420px}.blob.b{width:360px;height:360px}}
+.noise{position:absolute;inset:0;opacity:.035;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ---------- header + progresso ---------- */
+.shell{width:100%;max-width:var(--shell);margin:0 auto}
+.top{position:sticky;top:0;z-index:30}
+.hdr{height:52px;background:rgba(7,9,11,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);position:relative}
+.hdr .shell{height:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 20px}
+.hdr img{height:24px;width:auto}
+@media(min-width:640px){.hdr img{height:28px}}
+.hdr::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--line-1),transparent)}
+.label-sm{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--txt-4)}
+.hdr .label-sm{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.hdr .dot{width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.hdr .lg{display:none}@media(min-width:640px){.hdr .sm{display:none}.hdr .lg{display:inline}}
+.prog{background:linear-gradient(180deg,rgba(7,9,11,.97) 0%,rgba(7,9,11,.95) 60%,rgba(7,9,11,0) 100%);display:none}
+.prog.show{display:block}
+.prog .shell{padding:12px 16px}
+@media(min-width:640px){.prog .shell{padding:12px 20px}}
+.segs{display:flex;gap:6px}
+.seg{position:relative;height:6px;flex:1;border-radius:99px;background:var(--line-1);overflow:hidden}
+.seg i{position:absolute;inset:0;border-radius:99px;background:var(--amber);transform-origin:left;transform:scaleX(0);transition:transform .45s var(--ease)}
+.seg.on i{transform:scaleX(1);box-shadow:0 0 12px -1px var(--amber-line)}
+.seg.cur::after{content:'';position:absolute;inset:0;width:33%;border-radius:99px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);animation:sh 1.8s ease-in-out infinite}
+@keyframes sh{from{transform:translateX(-100%)}to{transform:translateX(300%)}}
+.prog-meta{display:flex;justify-content:space-between;align-items:center;padding-top:10px}
+.prog-meta .pct{font-size:11.5px;font-weight:700;color:var(--amber);font-variant-numeric:tabular-nums}
+
+/* ---------- palco ---------- */
+main{flex:1;display:flex;flex-direction:column}
+.stage{flex:1;display:flex;align-items:center;padding:20px 16px 32px}
+@media(min-width:640px){.stage{padding:24px 20px 40px}}
+.screen{width:100%;animation:in .38s var(--ease)}
+@keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* welcome */
+.hero{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line-1);margin-bottom:22px;aspect-ratio:16/9;background:var(--surface-1)}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(7,9,11,.75))}
+.badge{position:absolute;left:12px;bottom:10px;z-index:1;display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:#fff}
+.badge svg{color:var(--amber)}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+.eyebrow::before{content:'';width:16px;height:1.5px;background:var(--amber)}
+.w-title{font-size:clamp(28px,7.4vw,34px);font-weight:800;line-height:1.12;letter-spacing:-.025em;margin-bottom:14px}
+.w-title em{font-style:normal;color:var(--amber)}
+.w-sub{font-size:15px;line-height:1.62;color:var(--txt-3);margin-bottom:22px}
+.w-sub b{color:#fff}
+.meta{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:12px;font-size:12.5px;color:var(--txt-4)}
+.proof{margin-top:34px;text-align:center}
+.proof .label-sm{display:block;margin-bottom:12px}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee-track{display:flex;gap:12px;width:max-content;animation:mq 32s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.logo-chip{height:46px;padding:0 10px;display:flex;align-items:center;border-radius:12px;background:rgba(14,17,22,.9);border:1px solid var(--line-1)}
+.logo-chip img{height:28px;width:auto;display:block}
+
+/* perguntas */
+.q-title{font-size:clamp(22px,5.8vw,26px);font-weight:800;line-height:1.2;letter-spacing:-.02em;margin-bottom:8px}
+.q-sub{font-size:14.5px;color:var(--txt-3);line-height:1.55;margin-bottom:20px}
+.opts{display:flex;flex-direction:column;gap:10px}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:#fff;color:#0b0d10;border:2px solid transparent;border-radius:999px;padding:8px 18px 8px 8px;cursor:pointer;transition:transform .2s var(--ease),background .15s,box-shadow .2s;min-height:56px}
+.opt:hover{transform:scale(1.02);background:#f2f4f6}
+.opt:active{transform:scale(.97)}
+.opt.sel{border-color:var(--amber);box-shadow:0 0 0 4px var(--amber-soft)}
+.opt-ic{width:40px;height:40px;border-radius:50%;background:var(--amber);color:#0b0d10;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.opt-tx{flex:1;min-width:0}
+.opt-l{display:block;font-size:15px;font-weight:700;line-height:1.3}
+.opt-h{display:block;font-size:12.5px;color:#5b6570;line-height:1.35;margin-top:1px}
+.opt-r{width:18px;height:18px;border-radius:50%;border:2px solid #b5bdc6;flex-shrink:0;transition:all .15s}
+.opt.sel .opt-r{border-color:var(--amber);background:var(--amber);box-shadow:inset 0 0 0 3px #fff}
+.tip{display:flex;align-items:center;gap:7px;margin-top:14px;font-size:12px;color:var(--txt-4)}
+@media(hover:none){.tip{display:none}}
+
+.field{margin-bottom:14px}
+.flabel{display:block;font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--txt-4);margin-bottom:8px}
+.iwrap{position:relative;display:flex;align-items:center}
+.prefix{position:absolute;left:14px;font-size:16px;font-weight:600;color:var(--txt-3);pointer-events:none}
+.input{width:100%;height:52px;border-radius:12px;border:1.5px solid var(--line-2);background:rgba(23,27,33,.85);color:#fff;font-size:16px;font-family:inherit;padding:0 14px;outline:none;transition:border-color .15s,box-shadow .15s}
+.input.pre{padding-left:56px}
+.input::placeholder{color:var(--txt-4)}
+.input:focus{border-color:var(--amber);box-shadow:0 0 0 4px var(--amber-soft)}
+.input.err{border-color:var(--danger)}
+.input:-webkit-autofill,.input:-webkit-autofill:focus{-webkit-text-fill-color:#fff!important;-webkit-box-shadow:0 0 0 1000px #171b21 inset!important;caret-color:#fff}
+.helper{font-size:12.5px;color:var(--txt-4);margin-top:7px}
+.errm{display:none;font-size:12.5px;font-weight:600;color:var(--danger);margin-top:7px}
+.field.bad .errm{display:block}.field.bad .helper{display:none}
+.contacts-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;height:44px;margin-bottom:14px;border-radius:12px;border:1px dashed var(--line-2);background:transparent;color:var(--txt-3);font-weight:600;font-size:14px;cursor:pointer}
+.lgpd{display:flex;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;border:1px solid var(--line-1);background:rgba(14,17,22,.75);font-size:12.5px;line-height:1.5;color:var(--txt-3);margin:4px 0 2px}
+.lgpd svg{color:var(--amber);flex-shrink:0;margin-top:2px}
+.lgpd button{background:none;border:none;color:var(--amber);font-weight:700;text-decoration:underline;cursor:pointer;font-size:inherit;padding:0}
+
+.btn{width:100%;height:54px;margin-top:16px;border:none;border-radius:var(--radius);background:var(--amber);color:#0b0d10;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;box-shadow:0 10px 30px -10px var(--amber-line);transition:transform .2s var(--ease),filter .15s}
+.btn:hover{transform:scale(1.02);filter:brightness(1.05)}
+.btn:active{transform:scale(.97)}
+.back{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:14px;padding:8px;background:none;border:none;color:var(--txt-4);font-size:14px;font-weight:600;cursor:pointer}
+.back:hover{color:#fff}
+
+/* analisando / sucesso / desq */
+.center{text-align:center}
+.spin{width:64px;height:64px;margin:0 auto 24px;border-radius:50%;border:4px solid var(--amber-soft);border-top-color:var(--amber);animation:rot .8s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.a-title{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+.a-msg{font-size:15px;color:var(--txt-3);min-height:22px;transition:opacity .2s}
+.ok-ic{width:72px;height:72px;margin:0 auto 20px;border-radius:50%;background:var(--amber-soft);border:1px solid var(--amber-line);display:flex;align-items:center;justify-content:center;color:var(--amber);animation:pop .5s var(--ease)}
+@keyframes pop{from{transform:scale(.6) rotate(-8deg);opacity:0}}
+.s-title{font-size:clamp(24px,6.4vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.18;margin-bottom:10px}
+.s-sub{font-size:15px;color:var(--txt-3);line-height:1.6;max-width:28rem;margin:0 auto 22px}
+.checks{display:flex;flex-direction:column;gap:10px;text-align:left;margin:0 0 22px}
+.check{display:flex;gap:12px;align-items:flex-start;padding:12px 14px;border-radius:12px;background:rgba(14,17,22,.8);border:1px solid var(--line-1);font-size:14px;line-height:1.5;color:var(--txt-3)}
+.check svg{color:var(--amber);flex-shrink:0;margin-top:2px}
+.wpp{display:flex;align-items:center;justify-content:center;gap:10px;height:54px;border-radius:var(--radius);background:var(--whatsapp);color:#062a12;font-weight:800;font-size:16px;text-decoration:none;transition:transform .2s var(--ease)}
+.wpp:hover{transform:scale(1.02)}
+.small{font-size:12.5px;color:var(--txt-4);margin-top:12px}
+.links{display:flex;flex-direction:column;gap:10px;text-align:left}
+.lk{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(14,17,22,.8);border:1px solid var(--line-1);text-decoration:none;transition:border-color .15s}
+.lk:hover{border-color:var(--amber-line)}
+.lk .ic{width:38px;height:38px;border-radius:50%;background:var(--amber-soft);color:var(--amber);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.lk b{display:block;font-size:14.5px}.lk span{font-size:12.5px;color:var(--txt-4)}
+
+/* modais */
+.modal-bg{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);display:none;align-items:flex-end;justify-content:center;padding:16px}
+@media(min-width:640px){.modal-bg{align-items:center}}
+.modal-bg.show{display:flex}
+.modal{width:100%;max-width:28rem;max-height:88dvh;overflow:auto;background:var(--surface-1);border:1px solid var(--line-1);border-radius:20px;padding:26px 22px;animation:mup .32s var(--ease)}
+@keyframes mup{from{opacity:0;transform:translateY(16px) scale(.96)}}
+.modal h3{font-size:21px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+.modal p{font-size:14.5px;color:var(--txt-3);line-height:1.6}
+.modal .eyebrow{margin-bottom:10px}
+.m-items{display:flex;flex-direction:column;gap:14px;margin:18px 0}
+.m-item{display:flex;gap:12px}.m-item svg{color:var(--amber);flex-shrink:0;margin-top:2px}
+.m-item b{display:block;font-size:14.5px;margin-bottom:2px}.m-item p{font-size:13.5px}
+
+footer{border-top:1px solid var(--line-1);margin:0 auto;width:calc(100% - 32px);max-width:var(--shell);padding:16px 0 calc(16px + env(safe-area-inset-bottom));text-align:center;font-size:12px;color:var(--txt-4)}
+footer a{text-decoration:underline}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="bg" id="bg" aria-hidden="true">
+  <div class="bg-img" id="bgImg"></div><div class="bg-shade"></div>
+  <div class="blob a"></div><div class="blob b"></div><div class="noise"></div>
+</div>
+
+<div class="top">
+  <header class="hdr"><div class="shell">
+    <img id="logo" alt="1Nort" width="122" height="40"/>
+    <span class="label-sm"><span class="dot"></span><span class="sm">Diagnóstico</span><span class="lg">Diagnóstico Estratégico</span></span>
+  </div></header>
+  <div class="prog" id="prog"><div class="shell">
+    <div class="segs" id="segs" role="progressbar" aria-label="Progresso do diagnóstico"></div>
+    <div class="prog-meta"><span class="label-sm" id="progTxt"></span><span class="pct" id="progPct"></span></div>
+  </div></div>
+</div>
+
+<main><div class="stage"><div class="shell" id="host"></div></div></main>
+
+<footer>© <span id="yr"></span> 1Nort Digital · Todos os direitos reservados · <a id="privLink" target="_blank" rel="noopener">Política de Privacidade</a></footer>
+
+<div class="modal-bg" id="retModal"><div class="modal center">
+  <div class="eyebrow" id="retEye" style="justify-content:center"></div>
+  <h3 id="retTitle"></h3><p id="retText"></p>
+  <button class="btn" id="retStay"></button><button class="back" id="retLeave"></button>
+</div></div>
+
+<div class="modal-bg" id="lgpdModal"><div class="modal">
+  <h3 id="lgTitle"></h3><p id="lgIntro"></p>
+  <div class="m-items" id="lgItems"></div>
+  <p id="lgFoot" style="font-size:12.5px;color:var(--txt-4)"></p>
+  <button class="btn" id="lgClose">Entendi</button>
+</div></div>
+
+<script>
+/* =========================================================================
+   CONFIG — tudo que muda por cliente/funil fica aqui
+   ========================================================================= */
+const BRAND = {
+  name:"1Nort",
+  assets:"https://quiz.1nort.com.br",                 // logo, fundo, hero e logos de clientes vêm do quiz principal
+  site:"https://1nortdigital.com.br", siteLabel:"1nortdigital.com.br",
+  instagram:"https://instagram.com/1nortdigital", instagramLabel:"@1nortdigital",
+  privacidade:"https://1nortdigital.com.br/politica-de-privacidade/",
+  logo:"/logonovo1n-trim.png", background:"/background.webp", hero:"/hero-time.webp",
+  heroAlt:"Time da 1Nort reunido na sala de reunião, com o painel de clientes ao fundo"
+};
+
+const CONFIG = {
+  pixelId:    "275741338362124",
+  webhookUrl: "https://webhooks.1nort.com.br/webhook/solar-quiz",
+  sheetsUrl:  "https://script.google.com/macros/s/AKfycbxLMQhUYKg41jXl1vQsXUilpgOMndOLXnkO934KMu60HdaCjQgh0z7RYmDjeWvs4ZoQ/exec",
+  pagina:     "lp-quiz-mobilidade-eletrica",
+
+  eventoConversao: "Lead",               // fim do quiz, só qualificado (com value)
+  eventoContato:   "Contact",            // ao enviar nome+WhatsApp, só qualificado
+  eventoLegado:    "RespondiConversion", // junto do Contact (mantém públicos antigos)
+  eventoDesq:      "LeadDesqualificado",
+  pedirEmail:  true,                     // Acelera+ pede e-mail
+  pedirCidade: false,
+  valorBom: 25, valorTop: 100, currency: "BRL",
+  topThreshold: 8,                       // papel 3 + vendas 0–4 + agência 0–3
+
+  whatsapp: {
+    number: "5521981007951",
+    msg: "Olá, sou {nome}. Respondi o diagnóstico da minha loja de mobilidade elétrica no site da 1Nort e quero receber minha análise.",
+    autoRedirect: true, redirectDelayMs: 2200
+  },
+  analisando: { enabled:true, ms:2800,
+    msgs:["Processando suas respostas…","Comparando com lojas do seu porte…","Mapeando onde estão as oportunidades…","Preparando sua análise…"] },
+  retencao: { enabled:true, eyebrow:"Rumo ao próximo nível", title:"Falta pouco para sua análise",
+    text:"Você já está quase no fim. Quer concluir e receber a análise gratuita da sua loja?",
+    stay:"Concluir diagnóstico", leave:"Sair sem concluir" },
+  backRedirect: ""
+};
+
+const WELCOME = {
+  heroBadge:"Aceleradores em marketing e vendas",
+  eyebrow:"Diagnóstico gratuito para lojistas",
+  title:"Diagnóstico gratuito para sua loja de mobilidade elétrica",
+  titleAccent:"vender o dobro",
+  titleTail:"de veículos todo mês",
+  sub:"Em **menos de 1 minuto**, veja onde sua loja está perdendo vendas — e o que fazer para atrair mais clientes, atender mais rápido e fechar mais negócios.",
+  cta:"Iniciar diagnóstico",
+  meta:"Análise gratuita e sem compromisso."
+};
+
+const STEPS = [
+  { id:"vendas", kind:"single", title:"Em média, quantos veículos elétricos sua loja vende por mês?", sub:"Pode ser aproximado — só precisamos da ordem de grandeza.",
+    options:[
+      { icon:"vol1", label:"Até 5",     score:0, next:"papel" },
+      { icon:"vol2", label:"Entre 6 e 10",    score:1, next:"papel" },
+      { icon:"vol3", label:"Entre 11 e 20",   score:2, next:"papel" },
+      { icon:"vol4", label:"Entre 21 e 50",   score:3, next:"papel" },
+      { icon:"vol4", label:"Entre 51 e 100",  score:4, next:"papel" },
+      { icon:"vol5", label:"Mais de 100",  score:4, next:"papel" }
+    ] },
+  { id:"papel", kind:"single", title:"Qual é a sua função na loja?", sub:"Isso define o tipo de análise que vamos preparar para você.",
+    options:[
+      { icon:"owner",   label:"Sou dono ou sócio", hint:"Decido investimento e direção da loja", qualifies:true,  score:3, next:"agencia" },
+      { icon:"manager", label:"Sou gerente comercial", hint:"Lidero o time e as metas de vendas",    qualifies:true,  score:3, next:"agencia" },
+      { icon:"seller",  label:"Sou vendedor", hint:"Atuo na ponta, sem decisão de investimento", qualifies:false, score:0, end:"default" },
+      { icon:"other",   label:"Tenho outra função", hint:"Administrativo, marketing, financeiro etc.",               qualifies:false, score:0, end:"default" }
+    ] },
+  { id:"agencia", kind:"single", title:"Sua loja já contou com uma agência de marketing?", sub:"Isso ajuda a entender de onde você está partindo.",
+    options:[
+      { icon:"check", label:"Sim, temos uma hoje", score:3, next:"instagram" },
+      { icon:"clock", label:"Já tivemos, mas não temos mais", score:1, next:"instagram" },
+      { icon:"x",     label:"Nunca contratamos", score:0, next:"instagram" }
+    ] },
+  { id:"instagram", kind:"text", title:"Qual o @ do Instagram da sua loja?", sub:"Assim já chegamos à conversa conhecendo seu trabalho.",
+    field:{ placeholder:"@sualoja", helper:"Pode ser o @ do perfil ou o nome da loja." }, next:"contato" },
+  { id:"contato", kind:"contact", title:"Para onde enviamos sua análise?", sub:"Um especialista revisa seu perfil e retorna pelo WhatsApp.",
+    trust:true, contactPicker:true, fireContact:true, savePartial:true, next:"dados",
+    fields:[
+      { key:"nome", label:"Nome", type:"text", placeholder:"Seu nome completo", autoComplete:"name" },
+      { key:"telefone", label:"WhatsApp", type:"tel", placeholder:"(11) 99999-9999", autoComplete:"tel", prefix:"+55", helper:"É por aqui que a análise chega." }
+    ] },
+  { id:"dados", kind:"contact", title:"Qual o melhor e-mail para falar com você, {nome}?", sub:"Usamos só para enviar o material da sua análise.", submit:true,
+    fields:[
+      { key:"email",  label:"E-mail", type:"email", placeholder:"voce@sualoja.com", autoComplete:"email", onlyIf:"pedirEmail" },
+      { key:"cidade", label:"Cidade", type:"text", placeholder:"Ex.: Uberlândia, MG", autoComplete:"address-level2", onlyIf:"pedirCidade" }
+    ] }
+
+];
+
+const ENDS = {
+  default:{ title:"Obrigado pelo seu interesse",
+    body:"O programa da 1Nort é desenhado para <b>donos e gestores de lojas de mobilidade elétrica</b> que buscam estruturar geração de demanda e processo comercial. Esse não parece ser o seu momento — mas você pode continuar acompanhando nosso conteúdo gratuito:",
+    links:[ {icon:"instagram", label:"Acompanhar no Instagram", detail:BRAND.instagramLabel, url:BRAND.instagram},
+            {icon:"globe", label:"Conhecer o site da 1Nort", detail:BRAND.siteLabel, url:BRAND.site} ] }
+};
+
+const LGPD = { title:"Como tratamos os seus dados",
+  intro:"Ao concluir o diagnóstico, você concorda com o uso das informações abaixo pela 1Nort Digital, de acordo com a Lei Geral de Proteção de Dados (LGPD — Lei 13.709/2018).",
+  items:[
+    {icon:"shield", title:"Para que usamos", text:"Nome, WhatsApp e respostas do quiz são usados exclusivamente para preparar a sua análise e para um especialista entrar em contato."},
+    {icon:"lock", title:"Com quem compartilhamos", text:"Não vendemos nem cedemos seus dados a terceiros. O acesso é restrito ao time comercial da 1Nort e às ferramentas que operam esse atendimento."},
+    {icon:"chart", title:"Métricas e anúncios", text:"Usamos cookies e o Meta Pixel para medir a performance das campanhas. Você pode bloquear esses cookies nas configurações do seu navegador."},
+    {icon:"user", title:"Seus direitos", text:"Você pode pedir acesso, correção ou exclusão dos seus dados a qualquer momento — basta responder a conversa no WhatsApp ou nos chamar pelas redes."}
+  ],
+  footnote:"Nada de spam: você só recebe o contato do diagnóstico que solicitou." };
+
+const CLIENTES = [
+  {src:"/clientes/cliente-04.webp",nome:"Eletro Clima Energia Solar"},{src:"/clientes/cliente-11.webp",nome:"Cyclo Energy"},
+  {src:"/clientes/cliente-05.webp",nome:"SolPower Energia Fotovoltaica"},{src:"/clientes/cliente-13.webp",nome:"Nissi Energia Solar"},
+  {src:"/clientes/cliente-07.webp",nome:"ME Energia Solar"},{src:"/clientes/cliente-12.webp",nome:"Eficent Segurança Eletrônica e Energia"},
+  {src:"/clientes/cliente-08.webp",nome:"Solls"},{src:"/clientes/cliente-10.webp",nome:"Rede Solar"}
+];
+
+const SUCESSO = [
+  {icon:"clock", texto:"**Retorno em até 1 dia útil** — normalmente bem antes disso."},
+  {icon:"chart", texto:"Você recebe um **diagnóstico da sua loja** com os 3 pontos que mais travam suas vendas."},
+  {icon:"shield", texto:"Conversa consultiva, **sem compromisso** e sem script de venda."}
+];
+
+/* =========================================================================
+   ÍCONES
+   ========================================================================= */
+const P = {
+  owner:'<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-5h4v5"/>',
+  manager:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
+  seller:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>',
+  other:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+  vol1:'<path d="M5 20v-4"/><path d="M3 20h18" opacity=".35"/>',
+  vol2:'<path d="M5 20v-4M10 20v-7"/><path d="M3 20h18" opacity=".35"/>',
+  vol3:'<path d="M5 20v-4M10 20v-7M15 20v-10"/><path d="M3 20h18" opacity=".35"/>',
+  vol4:'<path d="M5 20v-4M10 20v-7M15 20v-10M20 20V6"/>',
+  vol5:'<path d="M5 20v-4M10 20v-7M15 20v-10M20 20V6"/><path d="M20 3v.01"/>',
+  check:'<path d="m5 12 5 5 9-10"/>', x:'<path d="M6 6l12 12M18 6 6 18"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  chart:'<path d="M3 3v18h18"/><path d="m7 15 4-4 3 3 6-6"/>',
+  shield:'<path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6l-8-3z"/>',
+  lock:'<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>',
+  user:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/>',
+  instagram:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>',
+  globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/>',
+  arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>', left:'<path d="M19 12H5M11 6l-6 6 6 6"/>',
+  spark:'<path d="M12 3v6M12 15v6M3 12h6M15 12h6"/>', info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
+  ok:'<path d="m5 12 5 5 9-10"/>', contacts:'<rect x="4" y="3" width="16" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M8 17c.8-1.8 2.2-2.6 4-2.6s3.2.8 4 2.6"/>'
+};
+const ic = (n,s=20,w=2) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${P[n]||''}</svg>`;
+const WPP = '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.515 5.26l-.999 3.648 3.973-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>';
+
+/* =========================================================================
+   ENGINE
+   ========================================================================= */
+(function(){
+  const $ = id => document.getElementById(id);
+  const host=$('host'), A=p=>BRAND.assets+p;
+  const byId={}; STEPS.forEach(s=>byId[s.id]=s);
+  const md = s => (s||'').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
+  const esc = s => String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  // marca
+  $('logo').src=A(BRAND.logo); $('bgImg').style.backgroundImage=`url(${A(BRAND.background)})`;
+  $('privLink').href=BRAND.privacidade; $('yr').textContent=new Date().getFullYear();
+
+  const pixelOn = !!CONFIG.pixelId && CONFIG.pixelId.indexOf('COLOQUE')<0;
+  if(window.fbq && pixelOn){ fbq('init',CONFIG.pixelId); fbq('track','PageView'); }
+
+  // sessão: UTMs, fbc/fbp, event_id
+  const qs=new URLSearchParams(location.search);
+  const utms={}; ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k=>utms[k]=qs.get(k)||'');
+  const cookie=n=>{const m=document.cookie.match('(^|;)\\s*'+n+'\\s*=\\s*([^;]+)');return m?decodeURIComponent(m.pop()):'';};
+  let fbc=cookie('_fbc'); const fbclid=qs.get('fbclid'); if(!fbc&&fbclid) fbc='fb.1.'+Date.now()+'.'+fbclid;
+  const sess={ eventId:(crypto.randomUUID?crypto.randomUUID():Date.now()+''+Math.random()), fbc, fbp:cookie('_fbp'), utms };
+
+  const lead={nome:'',telefone:'',email:'',cidade:'',instagram:'',papel:'',qualified:null,score:0,top:false,respostas:{},pts:{},firedEvents:[]};
+  const hist=[]; let cur=null, retArmed=false;
+
+  /* ---- util ---- */
+  const first=()=>{const n=(lead.nome||'').trim(); return n&&n.indexOf('@')<0? n.split(/\s+/)[0]:'';};
+  const px=s=>{ if(!s) return ''; const f=first(); return f? s.replace(/\{nome\}/g,esc(f)) : s.replace(/,?\s*\{nome\}/g,''); };
+  const digits=v=>(v||'').replace(/\D/g,'');
+  function mask(v){ let r=digits(v); if(r.length>11&&r.slice(0,2)==='55') r=r.slice(2); const d=r.slice(0,11);
+    if(d.length<=2) return d; if(d.length<=6) return '('+d.slice(0,2)+') '+d.slice(2);
+    if(d.length<=10) return '('+d.slice(0,2)+') '+d.slice(2,6)+'-'+d.slice(6); return '('+d.slice(0,2)+') '+d.slice(2,7)+'-'+d.slice(7); }
+  const validPhone=v=>{const d=digits(v);return d.length===10||(d.length===11&&d[2]==='9');};
+  const validEmail=v=>/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(v);
+  const fields=s=>s.fields.filter(f=>!f.onlyIf||CONFIG[f.onlyIf]);
+  const skip=s=>s && s.kind==='contact' && fields(s).length===0;
+
+  /* ---- progresso: conta as telas do caminho principal ---- */
+  function pathLen(){ let n=0,id=STEPS[0].id,seen={}; while(id&&byId[id]&&!seen[id]){ seen[id]=1; const s=byId[id]; if(!skip(s)) n++;
+      id = s.kind==='single' ? (s.options.find(o=>o.next)||{}).next : s.next; } return n; }
+  function setProg(show){
+    const pr=$('prog'); if(!show){ pr.classList.remove('show'); return; } pr.classList.add('show');
+    const total=pathLen(), now=Math.min(total, hist.filter(id=>!skip(byId[id])).length+1);
+    $('segs').innerHTML=Array.from({length:total},(_,i)=>`<div class="seg${i<now?' on':''}${i===now-1?' cur':''}"><i></i></div>`).join('');
+    $('segs').setAttribute('aria-valuetext',`Etapa ${now} de ${total}`);
+    $('progTxt').textContent=`Etapa ${now} de ${total}`; $('progPct').textContent=Math.round(now/total*100)+'%';
+  }
+  const dim=on=>$('bg').classList.toggle('dim',on);
+  const top0=()=>{ try{ window.scrollTo({top:0,behavior:'instant'}); }catch(e){ window.scrollTo(0,0); } };
+
+  /* ---- pixel + envio ---- */
+  function fire(name,custom){
+    const ev={event_name:name,event_id:sess.eventId,custom_data:custom||{}}; lead.firedEvents.push(ev);
+    if(window.fbq&&pixelOn) fbq('track',name,custom||{},{eventID:sess.eventId}); else console.log('[pixel mock]',name,custom||{});
+  }
+  function advancedMatching(){
+    if(!window.fbq||!pixelOn) return; const p=(lead.nome||'').toLowerCase().split(' ').filter(Boolean);
+    let ph=digits(lead.telefone); if(ph.length>=10&&ph.length<=11) ph='55'+ph;
+    const am={ph,fn:p[0]||'',ln:p.slice(1).join(' ')||''}; if(lead.email) am.em=lead.email.toLowerCase();
+    if(lead.cidade) am.ct=lead.cidade.toLowerCase().replace(/[^a-zà-ú]/g,''); fbq('init',CONFIG.pixelId,am);
+  }
+  function beacon(url,data){ const body=JSON.stringify(data);
+    try{ if(navigator.sendBeacon && navigator.sendBeacon(url,new Blob([body],{type:'text/plain;charset=UTF-8'}))) return; }catch(e){}
+    try{ fetch(url,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body,keepalive:true}); }catch(e){} }
+  function send(parcial){
+    const tier=parcial?'parcial':(lead.qualified===true?(lead.top?'top':'qualificado'):'desqualificado');
+    const payload=Object.assign({ pagina:CONFIG.pagina, event_id:sess.eventId,
+      nome:lead.nome, telefone:lead.telefone, email:lead.email, cidade:lead.cidade, instagram:lead.instagram,
+      papel:lead.papel, qualificado:lead.qualified===true, score:lead.score, top_tier:lead.top===true, tier, parcial:!!parcial,
+      fbc:sess.fbc, fbp:sess.fbp, user_agent:navigator.userAgent, event_source_url:location.href,
+      event_time:Math.floor(Date.now()/1000), eventos:lead.firedEvents, respostas:lead.respostas, origem:location.href }, sess.utms);
+    const live=u=>u&&u.indexOf('COLOQUE')<0;
+    if(live(CONFIG.sheetsUrl)) beacon(CONFIG.sheetsUrl,payload); else console.log('[sheets mock]',payload);
+    if(live(CONFIG.webhookUrl)) fetch(CONFIG.webhookUrl,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),keepalive:true}).catch(e=>console.warn('webhook',e));
+    else console.log('[webhook mock]',payload);
+  }
+  function score(){ let s=0; hist.concat(cur||[]).forEach(id=>s+=(lead.pts[id]||0)); lead.score=s;
+    lead.top=lead.qualified===true && s>=CONFIG.topThreshold; }
+
+  /* ---- telas ---- */
+  function welcome(){
+    cur=null; setProg(false); dim(true); const w=WELCOME;
+    host.innerHTML=`<div class="screen">
+      <div class="hero"><img src="${A(BRAND.hero)}" alt="${esc(BRAND.heroAlt)}" fetchpriority="high"><span class="badge">${ic('spark',14,2.4)}${w.heroBadge}</span></div>
+      <div class="eyebrow">${w.eyebrow}</div>
+      <h1 class="w-title">${w.title} <em>${w.titleAccent}</em> ${w.titleTail}</h1>
+      <p class="w-sub">${md(w.sub)}</p>
+      <button class="btn" id="go">${w.cta} ${ic('arrow',18)}</button>
+      <div class="meta">${ic('lock',13)} ${w.meta}</div>
+    </div>`;
+    $('go').onclick=()=>{ hist.length=0; armRet(); go(STEPS[0].id); };
+  }
+
+  function go(id){ while(skip(byId[id])) id=byId[id].next; if(!id){ finish(); return; } render(id); }
+
+  function render(id){
+    const s=byId[id]; cur=id; dim(false); setProg(true); top0();
+    const back=`<button class="back" id="bk">${ic('left',16)} Voltar</button>`;
+    const head=`<h2 class="q-title">${px(s.title)}</h2>${s.sub?`<p class="q-sub">${px(s.sub)}</p>`:''}`;
+
+    if(s.kind==='single'){
+      host.innerHTML=`<div class="screen">${head}<div class="opts" role="radiogroup">${s.options.map((o,i)=>
+        `<button class="opt" role="radio" aria-checked="${lead.respostas[s.id]===o.label}" data-i="${i}"><span class="opt-ic">${ic(o.icon,19)}</span><span class="opt-tx"><span class="opt-l">${o.label}</span>${o.hint?`<span class="opt-h">${o.hint}</span>`:''}</span><span class="opt-r"></span></button>`).join('')}</div>
+        <div class="tip">${ic('info',13)} Dica: use as teclas 1 a ${s.options.length} para responder mais rápido.</div>${back}</div>`;
+      host.querySelectorAll('.opt').forEach(b=>b.onclick=()=>choose(s,+b.dataset.i,b));
+    }
+    else if(s.kind==='contact'){
+      const fs=fields(s), picker=s.contactPicker && ('contacts' in navigator) && ('ContactsManager' in window);
+      host.innerHTML=`<div class="screen">${head}
+        ${picker?`<button type="button" class="contacts-btn" id="cp">${ic('contacts',17)} Preencher com meus contatos</button>`:''}
+        <form autocomplete="on" onsubmit="return false" novalidate>${fs.map((f,i)=>{
+          const inp=`<input class="input${f.prefix?' pre':''}" id="f_${f.key}" data-key="${f.key}" name="${f.autoComplete}" type="${f.type}" inputmode="${f.type==='tel'?'tel':f.type==='email'?'email':'text'}" placeholder="${f.placeholder}" autocomplete="${f.autoComplete}" value="${esc(lead[f.key])}"${i===0?' autofocus':''}>`;
+          return `<div class="field"><label class="flabel" for="f_${f.key}">${f.label}</label>${f.prefix?`<div class="iwrap"><span class="prefix">${f.prefix}</span>${inp}</div>`:inp}${f.helper?`<div class="helper">${f.helper}</div>`:''}<div class="errm"></div></div>`; }).join('')}</form>
+        ${s.trust?`<div class="lgpd">${ic('shield',16)}<span>Seus dados são tratados com sigilo e usados só para preparar sua análise, conforme a LGPD. Sem spam, sem repasse a terceiros. <button type="button" id="lgOpen">Política de privacidade</button>.</span></div>`:''}
+        <button class="btn" id="ok">${s.submit?'Receber minha análise':'Continuar'} ${ic('arrow',18)}</button>${back}</div>`;
+      host.querySelectorAll('input[type=tel]').forEach(el=>{ el.maxLength=15; el.addEventListener('input',()=>el.value=mask(el.value)); });
+      const lg=$('lgOpen'); if(lg) lg.onclick=()=>$('lgpdModal').classList.add('show');
+      const cp=$('cp'); if(cp) cp.onclick=pick;
+      bindSubmit(()=>submitContact(s));
+    }
+    else if(s.kind==='text'){
+      host.innerHTML=`<div class="screen">${head}
+        <div class="field"><input class="input" id="f_text" type="text" placeholder="${s.field.placeholder}" autocomplete="off" autocapitalize="none" value="${esc(lead.instagram)}" autofocus>
+        ${s.field.helper?`<div class="helper">${s.field.helper}</div>`:''}<div class="errm">Preencha para continuar.</div></div>
+        <button class="btn" id="ok">${s.submit?'Receber minha análise':'Continuar'} ${ic('arrow',18)}</button>${back}</div>`;
+      bindSubmit(()=>{ const el=$('f_text'), v=el.value.trim();
+        if(!v){ el.classList.add('err'); el.closest('.field').classList.add('bad'); el.focus(); return; }
+        lead.instagram=v; lead.respostas[s.id]=v;
+        if(s.submit) finish(); else { hist.push(cur); go(s.next); } });
+    }
+    $('bk').onclick=backStep;
+    const f=host.querySelector('.input'); if(f && matchMedia('(hover:hover)').matches) try{ f.focus({preventScroll:true}); }catch(e){}
+  }
+
+  function bindSubmit(fn){ $('ok').onclick=fn; host.querySelectorAll('.input').forEach(el=>el.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); fn(); } })); }
+
+  function choose(s,i,btn){
+    const o=s.options[i]; host.querySelectorAll('.opt').forEach(b=>{b.classList.remove('sel');b.setAttribute('aria-checked','false');});
+    btn.classList.add('sel'); btn.setAttribute('aria-checked','true');
+    lead.respostas[s.id]=o.label; lead.pts[s.id]=o.score||0;
+    if(s.id==='papel') lead.papel=o.label;
+    if(typeof o.qualifies==='boolean') lead.qualified=o.qualifies;
+    setTimeout(()=>{ if(o.end){ disqualify(o.end); return; } hist.push(cur); go(o.next); },240);
+  }
+
+  function submitContact(s){
+    const ins=[...host.querySelectorAll('.input')]; let ok=true;
+    ins.forEach(el=>{ const fld=el.closest('.field'), k=el.dataset.key, v=el.value.trim(); let m='';
+      fld.classList.remove('bad'); el.classList.remove('err');
+      if(!v) m='Campo obrigatório.';
+      else if(k==='nome'&&(v.indexOf('@')>-1||v.replace(/[^a-zà-ú]/gi,'').length<2)) m='Digite seu nome.';
+      else if(k==='telefone'&&!validPhone(v)) m='Digite um WhatsApp válido com DDD.';
+      else if(k==='email'&&!validEmail(v)) m='Digite um e-mail válido.';
+      else if(k==='cidade'&&v.replace(/[^a-zà-ú]/gi,'').length<2) m='Informe sua cidade.';
+      if(m){ fld.classList.add('bad'); el.classList.add('err'); fld.querySelector('.errm').textContent=m; if(ok){ el.focus(); ok=false; } } });
+    if(!ok) return;
+    ins.forEach(el=>lead[el.dataset.key]=el.value.trim());
+    advancedMatching();
+    if(s.fireContact && lead.qualified===true){ fire(CONFIG.eventoContato); if(CONFIG.eventoLegado) fire(CONFIG.eventoLegado,{value:CONFIG.valorBom,currency:CONFIG.currency}); }
+    if(s.savePartial) send(true);
+    if(s.submit || !s.next){ finish(); return; }
+    hist.push(cur); go(s.next);
+  }
+
+  function backStep(){ const p=hist.pop(); if(p) render(p); else welcome(); }
+
+  async function pick(){ try{ const r=await navigator.contacts.select(['name','tel','email'],{multiple:false}); const c=r&&r[0]; if(!c) return;
+      if(c.name&&c.name[0]) lead.nome=c.name[0]; if(c.tel&&c.tel[0]) lead.telefone=mask(c.tel[0]); if(c.email&&c.email[0]) lead.email=c.email[0];
+      host.querySelectorAll('.input').forEach(el=>{ if(lead[el.dataset.key]) el.value=lead[el.dataset.key]; }); }catch(e){} }
+
+  function finish(){
+    disarmRet(); score();
+    if(lead.qualified===true) fire(CONFIG.eventoConversao,{value:lead.top?CONFIG.valorTop:CONFIG.valorBom,currency:CONFIG.currency});
+    send(false);
+    if(CONFIG.analisando.enabled) analyzing(); else success();
+  }
+  function disqualify(key){
+    disarmRet(); score(); if(CONFIG.eventoDesq) fire(CONFIG.eventoDesq); send(false);
+    const e=ENDS[key]||ENDS.default; setProg(false); dim(true); top0();
+    host.innerHTML=`<div class="screen center"><div class="ok-ic">${ic('ok',34,2.4)}</div>
+      <h2 class="s-title">${e.title}</h2><p class="s-sub">${e.body}</p>
+      <div class="links">${e.links.map(l=>`<a class="lk" href="${l.url}" target="_blank" rel="noopener"><span class="ic">${ic(l.icon,18)}</span><span><b>${l.label}</b><span>${l.detail}</span></span></a>`).join('')}</div></div>`;
+  }
+  function analyzing(){
+    setProg(false); dim(true); top0(); const m=CONFIG.analisando.msgs;
+    host.innerHTML=`<div class="screen center"><div class="spin"></div><div class="a-title">Analisando seu perfil${first()?', '+esc(first()):''}…</div><div class="a-msg" id="am">${m[0]}</div></div>`;
+    let i=0; const each=Math.max(500,Math.floor(CONFIG.analisando.ms/m.length));
+    const t=setInterval(()=>{ i++; if(i>=m.length){clearInterval(t);return;} const el=$('am'); if(!el) return; el.style.opacity=0; setTimeout(()=>{ el.textContent=m[i]; el.style.opacity=1; },200); },each);
+    setTimeout(()=>{ clearInterval(t); success(); },CONFIG.analisando.ms);
+  }
+  function waLink(){ const n=digits(CONFIG.whatsapp.number); if(!n) return ''; return 'https://wa.me/'+n+'?text='+encodeURIComponent(px(CONFIG.whatsapp.msg)); }
+  function success(){
+    setProg(false); dim(true); top0();
+    const q=lead.qualified===true, wa=q?waLink():'', auto=q&&wa&&CONFIG.whatsapp.autoRedirect;
+    host.innerHTML=`<div class="screen center"><div class="ok-ic">${ic('ok',34,2.4)}</div>
+      <h2 class="s-title">${auto?'Tudo certo':'Recebemos suas respostas'}${first()?', '+esc(first()):''}!</h2>
+      <p class="s-sub">${auto?'Estamos te levando para o <b>WhatsApp</b> para liberar sua análise agora mesmo.':'Em breve nossa equipe entrará em contato pelo WhatsApp que você informou.'}</p>
+      <div class="checks">${SUCESSO.map(c=>`<div class="check">${ic(c.icon,18)}<span>${md(c.texto)}</span></div>`).join('')}</div>
+      ${wa?`<a class="wpp" href="${wa}" rel="noopener">${WPP} Falar agora no WhatsApp</a>${auto?'<p class="small">Não abriu? Toque no botão acima.</p>':''}`:''}</div>`;
+    if(auto) setTimeout(()=>{ location.href=wa; },CONFIG.whatsapp.redirectDelayMs);
+  }
+
+  /* ---- teclado 1..N nas perguntas ---- */
+  document.addEventListener('keydown',e=>{ if(!cur||byId[cur].kind!=='single'||e.target.tagName==='INPUT'||document.querySelector('.modal-bg.show')) return;
+    const n=parseInt(e.key,10); const b=host.querySelectorAll('.opt')[n-1]; if(b) b.click(); });
+
+  /* ---- retenção no "voltar" do navegador ---- */
+  function onPop(){ history.pushState(null,'',location.href); if(!CONFIG.retencao.enabled){ leave(); return; } $('retModal').classList.add('show'); }
+  function armRet(){ if(retArmed) return; retArmed=true; history.pushState(null,'',location.href); addEventListener('popstate',onPop); }
+  function disarmRet(){ if(!retArmed) return; retArmed=false; removeEventListener('popstate',onPop); }
+  function leave(){ disarmRet(); if(CONFIG.backRedirect) location.href=CONFIG.backRedirect; else history.back(); }
+  const R=CONFIG.retencao; $('retEye').textContent=R.eyebrow; $('retTitle').textContent=R.title; $('retText').textContent=R.text;
+  $('retStay').textContent=R.stay; $('retLeave').textContent=R.leave;
+  $('retStay').onclick=()=>$('retModal').classList.remove('show'); $('retLeave').onclick=()=>{ $('retModal').classList.remove('show'); leave(); };
+
+  /* ---- modal LGPD ---- */
+  $('lgTitle').textContent=LGPD.title; $('lgIntro').textContent=LGPD.intro; $('lgFoot').textContent=LGPD.footnote;
+  $('lgItems').innerHTML=LGPD.items.map(i=>`<div class="m-item">${ic(i.icon,18)}<div><b>${i.title}</b><p>${i.text}</p></div></div>`).join('');
+  $('lgClose').onclick=()=>$('lgpdModal').classList.remove('show');
+  document.querySelectorAll('.modal-bg').forEach(m=>m.addEventListener('click',e=>{ if(e.target===m) m.classList.remove('show'); }));
+
+  welcome();
+})();
+</script>
+</body>
+</html>
