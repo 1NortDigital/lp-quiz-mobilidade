@@ -250,6 +250,13 @@ const CONFIG = {
   whatsapp: {
     number: "5521981007951",
     msg: "Olá, sou {nome}. Respondi o diagnóstico da minha loja de mobilidade elétrica no site da 1Nort e quero receber minha análise.",
+    // resumo das respostas que vai logo abaixo da mensagem (linha some se a resposta estiver vazia)
+    resumo: [
+      { label:"Loja",                 campo:"instagram" },
+      { label:"Função",               campo:"papel" },
+      { label:"Vendas por mês",       campo:"vendas" },
+      { label:"Agência de marketing", campo:"agencia" }
+    ],
     autoRedirect: true, redirectDelayMs: 2200
   },
   analisando: { enabled:true, ms:2800,
@@ -560,7 +567,19 @@ const WPP = '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"
     const t=setInterval(()=>{ i++; if(i>=m.length){clearInterval(t);return;} const el=$('am'); if(!el) return; el.style.opacity=0; setTimeout(()=>{ el.textContent=m[i]; el.style.opacity=1; },200); },each);
     setTimeout(()=>{ clearInterval(t); success(); },CONFIG.analisando.ms);
   }
-  function waLink(){ const n=digits(CONFIG.whatsapp.number); if(!n) return ''; return 'https://wa.me/'+n+'?text='+encodeURIComponent(px(CONFIG.whatsapp.msg)); }
+  function waLink(){
+    const n=digits(CONFIG.whatsapp.number); if(!n) return '';
+    const f=first();
+    let msg = f ? CONFIG.whatsapp.msg.replace(/\{nome\}/g,f) : CONFIG.whatsapp.msg.replace(/,?\s*\{nome\}/g,'');
+    const linhas=(CONFIG.whatsapp.resumo||[]).map(r=>{
+      let v=(r.campo==='instagram'? lead.instagram : lead.respostas[r.campo])||'';
+      if(r.campo==='papel') v=v.replace(/^Sou\s+/i,'').replace(/^Tenho\s+/i,'');
+      v=String(v).trim(); if(!v) return '';
+      return '*'+r.label+':* '+v.charAt(0).toUpperCase()+v.slice(1);
+    }).filter(Boolean);
+    if(linhas.length) msg += '\n\n'+linhas.join('\n');
+    return 'https://wa.me/'+n+'?text='+encodeURIComponent(msg);
+  }
   function success(){
     setProg(false); dim(true); top0();
     const q=lead.qualified===true, wa=q?waLink():'', auto=q&&wa&&CONFIG.whatsapp.autoRedirect;
