@@ -26,6 +26,10 @@ summary::-webkit-details-marker{display:none}
 details[open] .faq-plus{transform:rotate(45deg)}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 .dot{animation:pulse 1.6s ease-in-out infinite}
+.mq{display:inline-flex;white-space:nowrap;will-change:transform;animation:mq 40s linear infinite}
+.mq span{padding-right:0.35em}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.mq{animation:none}}
 </style>
 <style>[hidden]{display:none!important}html{scroll-behavior:smooth}*{box-sizing:border-box}</style>
 <!-- Meta Pixel (1Nort) -->
@@ -91,7 +95,7 @@ fbq('init','275741338362124');fbq('track','PageView');
 
   <!-- FAIXA -->
   <div style="background: linear-gradient(100deg, #FFE28A 0%, #FFC21A 35%, #FFB800 60%, #FF8A00 100%); color: #0A0A0A; transform: rotate(-1.5deg); margin: -40px -40px 0; padding: 14px 0; white-space: nowrap; overflow: hidden; font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.12em; text-transform: uppercase; position: relative">
-    Mobilidade elétrica é o novo solar ✦ Aula gratuita ao vivo ✦ Inscrições abertas ✦ Vagas limitadas ✦ Mobilidade elétrica é o novo solar ✦ Aula gratuita ao vivo ✦ Inscrições abertas ✦ Vagas limitadas ✦ Mobilidade elétrica é o novo solar
+    <div class="mq"><span>Mobilidade elétrica é o novo solar ✦ Aula gratuita ao vivo ✦ Inscrições abertas ✦ Vagas limitadas ✦ Mobilidade elétrica é o novo solar ✦ Aula gratuita ao vivo ✦ Inscrições abertas ✦ Vagas limitadas ✦ </span><span aria-hidden="true">Mobilidade elétrica é o novo solar ✦ Aula gratuita ao vivo ✦ Inscrições abertas ✦ Vagas limitadas ✦ Mobilidade elétrica é o novo solar ✦ Aula gratuita ao vivo ✦ Inscrições abertas ✦ Vagas limitadas ✦ </span></div>
   </div>
 
   <!-- POR QUE AGORA -->
